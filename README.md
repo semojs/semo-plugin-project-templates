@@ -1,25 +1,56 @@
-YOUR_AWESOME_PLUGIN_NAME
-------------------------
+# semo-plugin-project-templates
 
-THIS IS A PLUGIN TEMPLATE
-****
-## Requirements
+This is a Semo plugins which provide more project templates, may or may not related with Semo.
 
-* Node v10.0+
-* Yarn
-* @semo/cli installed globally
+This is also a demo to show how keep your awesome project template using Semo in your organization.
+
+Just use one Semo hook to do this.
+
+```typescript
+export default (Utils) => {
+  return {
+    hook_create_project_template: new Utils.Hook('semo', {
+      project_key: {
+        name: 'A good name',
+        description: 'A good description.',
+        tags: ['tagtag'],
+        repo: 'git repo url'
+      }
+  }
+}
+```
 
 ## Usage
 
-1. Clone or download this repo, (Or use `semo new PLUGIN_NAME --select`)
-2. Run `yarn install`.
-3. At root directory, run `yarn watch`.
-4. At another window and same directory, run `semo hi`, an example command.
-5. Change the package name and version of package.json.
-6. Change that command or delete it, and use `semo generate command NAME` to generate a new one.
-7. Change this readme file also.
-8. Publish or share with your friends.
+```
+semo create PROJECT_NAME --template
+semo create PROJECT_NAME -T
+semo create PROJECT_NAME --template --tag tagtag
 
-## Publish
+```
 
-If you use the Travis as your CI/CD tool, this template has already include the config file. you don't need to change it, just get token from npm and set it to Travis the env variable `NPM_TOKEN`, then trigger the build when you tag and push your package or trigger it on Travis backend manually.
+## Plan
+
+My plan is to keep my nodejs project templates in this repo, so maybe it's not that useful for you. So to be a demo, you can create your own template projects plugin or put the hook code in your local machine.
+
+## Another way to do this.
+
+You can also register your project template info in your local machine global Semo config file.
+
+```
+# ~/.semo/.semorc.yml
+
+$plugin:
+  semo:
+    create:
+      repos:
+        backend_nest_one:
+          repo: git repo url
+          name: A good name
+          description: A good description
+          tags: [tagtag]
+
+```
+
+## Licence
+MIT
