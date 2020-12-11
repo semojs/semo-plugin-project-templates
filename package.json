@@ -1,6 +1,6 @@
 {
   "name": "semo-plugin-project-templates",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "A Semo plugin to provide more project templates for semo create.",
   "keywords": [
     "semo",
