@@ -11,7 +11,7 @@ export default (Utils: UtilsType) => {
       },
       'semo-starter-application-simple-typescript': {
         name: 'Simple backend typescript starter',
-        description: 'A tiny simple Semo project with typescript and Semo.',
+        description: 'A tiny simple backend project with typescript and semo.',
         tags: ['backend'],
         repo: 'https://github.com/semojs/semo-starter-application-simple-typescript.git'
       },
